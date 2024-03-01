@@ -8,27 +8,81 @@
     body, html {
         height: 100%;
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .iframe-container {
         position: relative;
-        width: 560px; /* Adjust as needed */
-        height: 315px; /* Adjust as needed */
     }
-    .iframe-container iframe {
-        position: absolute;
+    .menu {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        background-color: #333;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        z-index: 9999;
+    }
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .menu ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+    .menu ul li:last-child {
+        margin-right: 0;
+    }
+    .menu ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    .welcome-text {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 50px;
+    }
+    .iframe-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* Put it below the menu */
+    }
+    .iframe-container iframe {
+        width: 560px; /* Adjust as needed */
+        height: 315px; /* Adjust as needed */
+    }
+    .content {
+        padding: 20px;
+        background-color: #f0f0f0;
+        position: relative;
+        z-index: 1;
     }
 </style>
 </head>
 <body>
+
+<div class="menu">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Email</a></li>
+        <li><a href="#">Discord</a></li>
+    </ul>
+</div>
+
+<div class="welcome-text">
+    <h1>Welcome to my page! :D</h1>
+</div>
+
 <div class="iframe-container">
     <iframe src="https://www.youtube.com/embed/0CFSfmQGmqI?autoplay=1&loop=1&controls=0&rel=0&modestbranding=1&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+<div class="content">
+    <!-- Your website content goes here -->
+    <h2>Other Content Goes Here</h2>
+    <p>This is some sample content. You can replace it with your own content.</p>
+</div>
+
 </body>
 </html>
